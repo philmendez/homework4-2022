@@ -1,0 +1,141 @@
+body {
+    font-family: Poppins, serif;
+    background-image: url(/images/concrete_seamless.png);
+    background-color: #f1f1f1;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center;
+    align-items: center; */
+}
+
+a:visited{
+    color:blue;
+  }
+
+.card > header{
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px 50px 0 0;
+    flex-basis: 450px;
+    align-content: center;
+}
+
+.pricing {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center
+}
+
+#logo {
+    animation-name: growgo;
+    animation-duration: 5s;
+}
+
+@keyframes growgo {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+  }
+
+
+  /* DESKTOP VIEW */
+
+  @media only screen and (min-width: 900px){
+    
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 250px;
+        align-content: center;
+    }
+    /* header:first-child {
+        position: sticky;
+        top: 0;
+    } */
+    header {
+        position: sticky;
+        top: 0;
+    }
+  }
+
+/* REDUCED MOTION */
+
+    @media (prefers-reduced-motion: reduce) {
+        #logo {
+            animation: none;
+        }
+      }
+
+/* PRINT VIEW */
+
+@media print {
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+    .nav_links {
+        flex-direction: column;
+        align-content: space-around;
+    }
+    .nav_links {
+        flex-direction: column;
+        justify-content: center;
+        align-content: space-around;
+    }
+    .pricing {
+        align-items: flex-end;
+    }
+    .card {
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+    }
+    .gallery {
+        display: none;
+    }
+    li::nth-child(2) {
+        content: "👍🏼";
+      }
+ }
